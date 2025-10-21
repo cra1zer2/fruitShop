@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Zamówień</title>
+</head>
+<body>
+    <h1>Lista Zamówień</h1>
+    <ul>
+        {% for zamowienie in zamowienia %}
+            <li>
+                {{ zamowienie.klient.imie }} {{ zamowienie.klient.nazwisko }} -
+                {{ zamowienie.owoc.nazwa }} -
+                {{ zamowienie.ilosc }} kg -
+                {{ zamowienie.data|date:"Y-m-d H:i" }}
+            </li>
+        {% empty %}
+            <li>Brak zamówień.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

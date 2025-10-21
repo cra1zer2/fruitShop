@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Owoców</title>
+</head>
+<body>
+    <h1>Owoce</h1>
+    <ul>
+        {% for owoc in owoce %}
+            <li>
+                <h3>{{ owoc.nazwa }}</h3>
+                <p><strong>Kraj pochodzenia:</strong> {{ owoc.kraj_pochodzenia }}</p>
+                <p><strong>Cena:</strong> {{ owoc.cena_za_kg }} zł/kg</p>
+                <p>{{ owoc.opis }}</p>
+            </li>
+        {% empty %}
+            <li>Brak owoców w ofercie.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
