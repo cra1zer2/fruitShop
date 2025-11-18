@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}FruitShop{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% include 'nav.html' %}
+    </header>
+    <main>
+        {% block content %}
+            <h1>Witaj w naszym sklepie z owocami!</h1>
+            <p>Wybierz jedną z opcji w menu nawigacyjnym, aby kontynuować.</p>
+        {% endblock %}
+    </main>
+</body>
+</html>

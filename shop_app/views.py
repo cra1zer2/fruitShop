@@ -1,16 +1,17 @@
 from django.shortcuts import render
-from .models import Owoc, Klient, Zamowienia
+from .models import Klient, Owoc, Zamowienia
 
-def lista_owocow(request):
-    owoce = Owoc.objects.all()
+def strona_glowna(request):
+    return render(request, 'base.html')
 
-    return render(request, 'shop_app/lista_owocow.html', {'owoce': owoce})
-
-def lista_klientow(request):
+def lista_klientow_view(request):
     klienci = Klient.objects.all()
+    return render(request, 'lista_klientow.html', {'klienci': klienci})
 
-    return render(request, 'shop_app/lista_klientow.html', {'klienci': klienci})
+def lista_owocow_view(request):
+    owoce = Owoc.objects.all()
+    return render(request, 'lista_owocow.html', {'owoce': owoce})
 
-def lista_zamowien(request):
+def lista_zamowien_view(request):
     zamowienia = Zamowienia.objects.all()
-    return render(request, 'shop_app/lista_zamowien.html', {'zamowienia': zamowienia})
+    return render(request, 'lista_zamowien.html', {'zamowienia': zamowienia})

@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista Owoców</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Lista Owoców{% endblock %}
+
+{% block content %}
     <h1>Owoce</h1>
     <ul>
         {% for owoc in owoce %}
@@ -18,5 +16,4 @@
             <li>Brak owoców w ofercie.</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
